@@ -1,22 +1,19 @@
 <template>
-	<view class="index">
-		首页
+	<view class="my">
+		我的
 	</view>
 </template>
 
 <script>
 	export default {
 		data() {
-			return {}
-		},
-		onLoad() {
+			return {
 
-		},
-		methods: {
-
+			};
 		}
 	}
 </script>
 
-<style>
+<style lang="scss">
+
 </style>

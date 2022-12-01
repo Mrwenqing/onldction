@@ -1,16 +1,15 @@
 <template>
-	<view class="index">
-		首页
+	<view class="study">
+		学习
 	</view>
 </template>
 
 <script>
 	export default {
 		data() {
-			return {}
-		},
-		onLoad() {
+			return {
 
+			}
 		},
 		methods: {
 
@@ -19,4 +18,5 @@
 </script>
 
 <style>
+
 </style>
