@@ -1,52 +1,57 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}, {
-			"path": "pages/my/my",
-			"style": {
-				"navigationStyle": "custom",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/study/study",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	},
-	"tabBar": {
-		"list": [{
-				"pagePath": "pages/index/index",
-				"text": "首页",
-				"iconPath": "static/tabbar/index1.png",
-				"selectedIconPath": "static/tabbar/index1_selected.png"
-			},
-			{
-				"pagePath": "pages/study/study",
-				"text": "学习",
-				"iconPath": "static/tabbar/learn.png",
-				"selectedIconPath": "static/tabbar/learn_selected.png"
-			},
-			{
-				"pagePath": "pages/my/my",
-				"text": "我的",
-				"iconPath": "static/tabbar/home.png",
-				"selectedIconPath": "static/tabbar/home_selected.png"
-			}
-		]
-	},
-	"uniIdRouter": {}
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "uni-app"
+      }
+    },
+    {
+      "path": "pages/my/my",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/study/study",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/tabbar/index1.png",
+        "selectedIconPath": "static/tabbar/index1_selected.png"
+      },
+      {
+        "pagePath": "pages/study/study",
+        "text": "学习",
+        "iconPath": "static/tabbar/learn.png",
+        "selectedIconPath": "static/tabbar/learn_selected.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home_selected.png"
+      }
+    ],
+    "selectedColor": "#2c2c2c",
+    "backgroundColor": "#fff",
+    "color": "#clc0cb"
+  },
+  "uniIdRouter": {}
 }
