@@ -1,10 +1,17 @@
 import App from './App'
+import Vue from "vue"
+
+import mixins from "@/common/mixins/mixins.js"
+Vue.mixin(mixins)
+
+
+import store from "@/store/index.js"
 
 // #ifndef VUE3
-import Vue from 'vue'
 Vue.config.productionTip = false
 App.mpType = 'app'
 const app = new Vue({
+	store,
     ...App
 })
 app.$mount()

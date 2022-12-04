@@ -5,114 +5,151 @@
 			"style": {
 				"navigationBarTitleText": "首页"
 			}
-		}, {
-			"path": "pages/my/my",
-			"style": {
-				"navigationBarTitleText": "我的",
+		}
+	    ,{
+            "path" : "pages/learn/learn",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "学习",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/home/home",
+            "style" :                                                                                    
+            {
 				"navigationBarTextStyle": "white",
-				"navigationBarBackgroundColor": "#5ccc84",
-				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#5ccb84",
+                "navigationBarTitleText": "我的",
+                "enablePullDownRefresh": false,
 				"app-plus": {
 					"titleNView": {
-						"titleAlign": "left"
+						"buttons": [
+							{
+								"float": "right",
+								"type": "menu"
+							}
+						]
 					}
 				}
-			}
-
-		}, {
-			"path": "pages/study/study",
-			"style": {
-				"navigationBarTitleText": "学习",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/login/login",
-			"style": {
-				"navigationBarTitleText": "登录",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/order/order",
-			"style": {
-				"navigationBarTitleText": "订单",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/message/message",
-			"style": {
-				"navigationBarTitleText": "消息",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/collect/collect",
-			"style": {
-				"navigationBarTitleText": "收藏",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/edit/edit",
-			"style": {
-				"navigationBarTitleText": "编辑",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/setting/setting",
-			"style": {
-				"navigationBarTitleText": "设置",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/coupon/coupon",
-			"style": {
-				"navigationBarTitleText": "优惠券",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/question/question",
-			"style": {
-				"navigationBarTitleText": "常见问题",
-				"enablePullDownRefresh": false
-			}
-
-		}
-	],
+            }
+            
+        }
+        ,{
+            "path" : "pages/login/login",
+            "style" :                                                                                    
+            {
+                "app-plus": {
+                	"titleNView": {
+                		"type": "transparent"
+						
+                	}
+                }
+            }
+            
+        }
+        ,{
+            "path" : "pages/order/order",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "订单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/message/message",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "消息",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/favorite/favorite",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "收藏",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/editUser/editUser",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "编辑资料",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/setting/setting",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "设置",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/disCard/disCard",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "优惠券",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/FAQ/FAQ",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "常见问题",
+                "enablePullDownRefresh": false
+            }
+        }
+        ,{
+            "path" : "pages/forgetPassword/forgetPassword",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "忘记密码",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},
+	"uniIdRouter": {},
 	"tabBar": {
 		"selectedColor": "#2c2c2c",
-		"backgroundColor": "#ffffff",
-		"color": "#c1c0cb",
-		"list": [{
-				"pagePath": "pages/index/index",
+		"backgroundColor": "#fff",
+		"list": [
+			{
 				"text": "首页",
+				"pagePath": "pages/index/index",
 				"iconPath": "static/tabbar/index1.png",
 				"selectedIconPath": "static/tabbar/index1_selected.png"
 			},
 			{
-				"pagePath": "pages/study/study",
 				"text": "学习",
+				"pagePath": "pages/learn/learn",
 				"iconPath": "static/tabbar/learn.png",
 				"selectedIconPath": "static/tabbar/learn_selected.png"
 			},
 			{
-				"pagePath": "pages/my/my",
 				"text": "我的",
+				"pagePath": "pages/home/home",
 				"iconPath": "static/tabbar/home.png",
 				"selectedIconPath": "static/tabbar/home_selected.png"
 			}
 		]
-	},
-	"uniIdRouter": {}
+	}
 }

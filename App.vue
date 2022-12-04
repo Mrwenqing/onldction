@@ -14,14 +14,12 @@
 
 <style>
 	/*每个页面公共css */
-	/* 公共样式表 */
-	@import url("@/common/css/free.css");
-	@import url("@/common/css/common.css");
-
-	/* 字体图标库 */
-	@import url("@/common/css/iconfont.css");
-	@import url("@/iconfont/iconfont.css");
-
-	/* 动画库 */
-	@import url("@/common/css/animate.min.css");
+	@import url(@/common/free.css);
+	/* 主题色样式表 */
+	@import url(@/common/common.css);
+	/* 动画 */
+	@import url(@/common/animate.min.css);
+	/* 字体图标 */
+	@import url(~@/common/iconfont.css);
+	@import url(@/icona/iconfont.css)
 </style>

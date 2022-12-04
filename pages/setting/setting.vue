@@ -1,6 +1,6 @@
 <template>
-	<view class="setting">
-		设置
+	<view>
+		
 	</view>
 </template>
 
@@ -8,11 +8,11 @@
 	export default {
 		data() {
 			return {
-
+				
 			}
 		},
 		methods: {
-
+			
 		}
 	}
 </script>
