@@ -1,160 +1,138 @@
 <template>
 	<view class="login-box">
-		
 		<view class="login-bg"></view>
-		
-		<view v-show="flag===1" class="login-content">
-				<view class="login-title">
-					<text>登 录</text>
-				</view>
-				<view class="loginForm">
-					<i-input :loginInput="loginInput"></i-input>
-				</view>
-				<view class="tologinOrFgtpsw">
-					<text class="goLogin" @click="flag=0">去注册</text>
-					<text class="fgtPsw" @click="fgtPsw">忘记密码？</text>
-				</view>
-				<view class="elselogin">
-					<view class="elseIcon">
-						<text class="icon iconfont icon-weixin"></text>
-					</view>
-				</view>
-				<view class="agreen">
-					<!-- <checkbox-group @change="selectCk">
-						<label>
-							<checkbox :value="yes" /><text>已阅读并同意用户协议&隐私声明</text>
-						</label>
-					</checkbox-group> -->
-					<checkbox :checked="isChecked" @click="isChecked=!isChecked" /><text>已阅读并同意用户协议&隐私声明</text>
-				</view>
-		</view>
-		
-		
-		
-		<view v-show="flag===0" class="login-content">
-				<view class="login-title">
-					<text>注 册</text>
-				</view>
-				<view class="loginForm">
-					<i-input :zhuceList="zhuceList"></i-input>
-				</view>
-				<view class="tologinOrFgtpsw">
-					<text class="goLogin" @click="flag=1">去登录</text>
-					<text class="fgtPsw" @click="fgtPsw">忘记密码？</text>
-				</view>
-				<view class="elselogin">
-					<view class="elseIcon">
-						<text class="icon iconfont icon-weixin"></text>
-					</view>
-				</view>
-		</view>
+		<view class="login">
+			<view class="loginTitle">{{type=='login'?'登 录':'注 册'}}</view>
+			<!-- 表单 -->
 
+			<formInput :type="type" :formlist="formlist" :agreement="agreement" 
+			v-model="form" @changeLogin="toAccount">
+			</formInput>
+
+			<view class="register">
+				<text class="text-success" @click="toAccount">
+					{{type=='login'?'注册账号':'去登录'}}</text>
+				<text v-if="type=='login'" class="text-light-muted" @click="navTo('/pages/forget/forget')">忘记密码？</text>
+			</view>
+
+			<view class="weixinIcon">
+				<uni-icons type='weixin' size="30" color="#6dd091"></uni-icons>
+			</view>
+
+			<view v-if="type=='login'" class="agreement">
+				<checkbox-group @change="changeCheckBox">
+					<checkbox style="transform: scale(0.7);" :checkes="agreement" />
+					<text class="text-light-muted">已阅读并同意用户协议&隐私声明</text>
+				</checkbox-group>
+			</view>
+		</view>
 	</view>
 </template>
 
 <script>
-	import iInput from "@/components/i-input.vue"
-	import loginInput from "@/config/login/loginInput.js"
-	import zhuceList from "@/config/login/zhuce.js"
+	import formInput from "@/components/formInput/formInput.vue" //封装表单
+	import {
+		mapGetters
+	} from "vuex";
 	export default {
-		components:{
-			iInput
+		components: {
+			formInput,
 		},
-		onLoad() {
-			// console.log(this.zhuceList,'zhuceList');
+		computed: {
+			...mapGetters(["hasLogin"]),
 		},
 		data() {
 			return {
-				// flag为0是注册reg  flag为1是登录login
-				flag:1,
-				yes:'',
-				isChecked:false,
-				loginInput:loginInput(),
-				zhuceList:zhuceList()
-			}
+				//登录 注册
+				type: "login",
+				agreement: false,
+				form: {
+					username: "",
+					password: "",
+					repassword: "",
+
+				},
+				// 表单数据 
+				formlist: [{
+						type: "text",
+						icon: "person",
+						placeholder: "请输入用户名",
+						prop: "username",
+						show: true
+					},
+					{
+						type: "password",
+						icon: "locked",
+						placeholder: "请输入密码",
+						prop: "password",
+						show: true
+					}, {
+						type: "password",
+						icon: "locked",
+						placeholder: "请输入确认密码",
+						prop: "repassword",
+						show: false
+					},
+
+					{
+						type: "button",
+						value: "登 录"
+					}
+				]
+			};
 		},
 		methods: {
-			selectCk(e){
-				console.log(e,'e');
+			toAccount() {
+				if (this.type == 'reg') {
+					this.type = 'login'
+					this.formlist[2].show = false
+					this.formlist[3].value = '登 录'
+				} else {
+					this.type = 'reg'
+					this.formlist[2].show = true
+					this.formlist[3].value = '注 册'
+				}
+				for (let i in this.form) {
+					this.form[i] = ""
+				}
 			},
-			fgtPsw(){
-				this.navTo("/pages/forgetPassword/forgetPassword")
+			// 切换 多选
+			changeCheckBox() {
+				console.log(this.agreement)
+				this.agreement=!this.agreement
 			}
 		}
 	}
 </script>
 
 <style lang="scss">
-	page,.login-box{
-		height: 100%;
+	.loginTitle {
+		font-size: 44rpx;
+		color: #35404b;
+		margin-bottom: 20rpx;
+	}
+
+	.register {
+		margin-top: 70rpx;
 		display: flex;
-		flex-direction: column;
-		.login-top{
-			height: 150rpx;
-			background:linear-gradient(to right,#84f5ba,#8dd9ea);
-		}
-		.login-content{
-			border-radius: 30rpx;
-			border-bottom-right-radius: 0;
-			border-bottom-left-radius: 0;
-			transform: translateY(-25rpx);
-			background-color: white;
-			flex: 1;
-			padding: 70rpx 70rpx 0 70rpx;
-			.login-title{
-				font-size: 44rpx;
-				display: flex;
-				height: 108rpx;
-			}
-			.loginForm{
-				width: 610rpx;
-			}
-			.tologinOrFgtpsw{
-				height: 100rpx;
-				align-items: center;
-				display: flex;
-				justify-content: space-between;
-				margin:30rpx 0;
-				.goLogin,.fgtPsw{
-					font-size: 30rpx;
-				}
-				.goLogin{
-					color: #5ccc84;
-				}
-				.fgtPsw{
-					color: #a9a5a0;
-				}
-			}
-			
-			.elselogin{
-				width: 610rpx;
-				height: 100rpx;
-				// background-color: red;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				.elseIcon{
-					width: 100rpx;
-					// justify-content: center;
-					width: 100rpx;
-					height: 100rpx;
-					// background-color: black;
-				}
-					.icon{
-						font-size: 105rpx;
-						color: #5ccc84;
-					}
-			}
-			
-			
-			.agreen{
-				margin-top: 40rpx;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				color: #a19d96;
-				font-size: 30rpx;
-			}
-		}
+		justify-content: space-between;
+		font-size: 28rpx;
+	}
+
+	.weixinIcon {
+		margin: 70rpx auto 40rpx;
+		width: 100rpx;
+		height: 100rpx;
+		border-radius: 50%;
+		border: 1px solid #5ccc84;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 60rpx;
+		color: #5ccc84;
+	}
+
+	.agreement {
+		text-align: center;
 	}
 </style>

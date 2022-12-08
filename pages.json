@@ -1,138 +1,233 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [
+		// 首页
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "首页"
+				 "enablePullDownRefresh": true,
+				"app-plus": {
+					"titleNView": false
+					
+				// 		"searchInput": {
+				// 			"height": "200rpx",
+				// 			"align": "center",
+				// 			"placeholder": "搜索你想要的内容",
+				// 			"placeholderColor": "#928e8a",
+				// 			"backgroundColor": "#f5f5f1",
+				// 			"disabled": true
+				// 		}
+					// }
+				}
 			}
-		}
-	    ,{
-            "path" : "pages/learn/learn",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "学习",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/home/home",
-            "style" :                                                                                    
-            {
-				"navigationBarTextStyle": "white",
-				"navigationBarBackgroundColor": "#5ccb84",
-                "navigationBarTitleText": "我的",
-                "enablePullDownRefresh": false,
+
+		}, {
+			// 学习进度 /pages/tabbar/learn/learn
+			"path": "pages/tabbar/learn/learn",
+			"style": {
+				"navigationBarTitleText": "学习进度",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			// 我的
+			"path": "pages/tabbar/home/home",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#5ccc84", //导航栏背景颜色
+				"navigationBarTextStyle": "white", //导航栏字体颜色
 				"app-plus": {
 					"titleNView": {
-						"buttons": [
-							{
-								"float": "right",
-								"type": "menu"
-							}
-						]
+						"buttons": [{
+							"float": "right",
+							"type": "menu"
+						}]
 					}
 				}
-            }
-            
-        }
-        ,{
-            "path" : "pages/login/login",
+			}
+
+		}, {
+			// 登录
+			"path": "pages/login/login",
+			"style": {
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent" // app/h5滚动透明渐变
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/setting/setting",
+			"style": {
+				"navigationBarTitleText": "我的设置",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/user-info/user-info",
+			"style": {
+				"navigationBarTitleText": "编辑资料",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/order-list/order-list",
+			"style": {
+				"navigationBarTitleText": "我的订单",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/msg-list/msg-list",
+			"style": {
+				"navigationBarTitleText": "消息列表",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/fava-list/fava-list",
+			"style": {
+				"navigationBarTitleText": "收藏列表",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/my-coupon/my-coupon",
+			"style": {
+				"navigationBarTitleText": "我的优惠券",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/problem/problem",
+			"style": {
+				"navigationBarTitleText": "常见问题",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/forget/forget",
+			"style": {
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent" // app/h5滚动透明渐变
+					}
+				}
+			}
+
+		}
+	    ,{
+            "path" : "pages/bind-phone/bind-phone",
             "style" :                                                                                    
             {
                 "app-plus": {
                 	"titleNView": {
-                		"type": "transparent"
-						
+                		"type": "transparent" // app/h5滚动透明渐变
                 	}
                 }
             }
             
         }
         ,{
-            "path" : "pages/order/order",
+            "path" : "pages/my-post/my-post",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "订单",
+                "navigationBarTitleText": "我的帖子",
                 "enablePullDownRefresh": false
             }
             
         }
         ,{
-            "path" : "pages/message/message",
+            "path" : "pages/my-test/my-test",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "消息",
+                "navigationBarTitleText": "我的考试数据",
                 "enablePullDownRefresh": false
             }
             
         }
         ,{
-            "path" : "pages/favorite/favorite",
+            "path" : "pages/my-book/my-book",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "收藏",
+                "navigationBarTitleText": "我的电子书",
                 "enablePullDownRefresh": false
             }
             
         }
         ,{
-            "path" : "pages/editUser/editUser",
+            "path" : "pages/user-safe/user-safe",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "编辑资料",
+                "navigationBarTitleText": "修改密码",
                 "enablePullDownRefresh": false
             }
             
-        }
-        ,{
-            "path" : "pages/setting/setting",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "设置",
-                "enablePullDownRefresh": false
-            }
+        },{
+            "path" : "pages/search/search",
+         
+				"style": {
+					 "enablePullDownRefresh": true,
+					"app-plus": {
+						"titleNView": {
+							"searchInput": {
+								"height": "200rpx",
+								"align": "left",
+								"borderRadius": "30rpx",
+								"placeholder": "输入搜索关键字",
+								"placeholderColor": "#ccc",
+								"backgroundColor": "#f6f9fb"
+							},
+							"buttons": [
+								{
+									"text": "搜索",
+									"fontSize": "30rpx"
+								}
+							]
+						}
+					}
+				}
             
         }
         ,{
-            "path" : "pages/disCard/disCard",
+            "path" : "pages/course/course",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "优惠券",
+                "navigationBarTitleText": "详情",
                 "enablePullDownRefresh": false
             }
-            
-        }
+        } 
         ,{
-            "path" : "pages/FAQ/FAQ",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "常见问题",
-                "enablePullDownRefresh": false
-            }
-        }
-        ,{
-            "path" : "pages/forgetPassword/forgetPassword",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "忘记密码",
-                "enablePullDownRefresh": false
+            "path" : "pages/search-result/search-result",
+            "style": {
+            	 "enablePullDownRefresh": true,
+            	"app-plus": {
+            		"titleNView": {
+            			"searchInput": {
+            				"height": "200rpx",
+            				"align": "left",
+            				"borderRadius": "30rpx",
+            				"placeholder": "输入搜索关键字",
+            				"placeholderColor": "#ccc",
+            				"backgroundColor": "#f6f9fb",
+							"disabled": true
+            			}
+            		}
+            	}
             }
             
         }
     ],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	},
-	"uniIdRouter": {},
 	"tabBar": {
-		"selectedColor": "#2c2c2c",
-		"backgroundColor": "#fff",
-		"list": [
-			{
+		"color": "#c4c0c9",
+		"selectedColor": "#353535",
+		"list": [{
 				"text": "首页",
 				"pagePath": "pages/index/index",
 				"iconPath": "static/tabbar/index1.png",
@@ -140,16 +235,24 @@
 			},
 			{
 				"text": "学习",
-				"pagePath": "pages/learn/learn",
+				"pagePath": "pages/tabbar/learn/learn",
 				"iconPath": "static/tabbar/learn.png",
 				"selectedIconPath": "static/tabbar/learn_selected.png"
 			},
 			{
 				"text": "我的",
-				"pagePath": "pages/home/home",
+				"pagePath": "pages/tabbar/home/home",
 				"iconPath": "static/tabbar/home.png",
 				"selectedIconPath": "static/tabbar/home_selected.png"
 			}
 		]
-	}
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
 }
