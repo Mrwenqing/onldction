@@ -1,13 +1,13 @@
 <template>
 	<view class="couponBox">
 		<!-- 我的优惠券 -->
-		<CouponItem v-for="(item,index) in rowsList" :key="index" :item="item" current="home"></CouponItem>
+		<couponItem v-for="(item,index) in rowsList" :key="index" :item="item" current="home"></couponItem>
 		<noList></noList>
 	</view>
 </template>
 
 <script>
-	import CouponItem from "@/components/coupon-item/coupon-item.vue"
+	import couponItem from "@/components/coupon-item/coupon-item.vue"
 	import indexAPi from "@/api/index.js"
 	export default {
 		data() {
@@ -20,18 +20,19 @@
 			};
 		},
 		components:{
-			CouponItem,
+			couponItem,
 		},
-		created(){
+		onLoad(options){
+			console.log(options,26)
 			this.getList()
 		},
+		
 		methods:{
 			async getList (){
 				let {code,data} =await indexAPi.userCoupon(this.data)
 				
 				if(code==20000){
 					this.rowsList=data.rows
-					// console.log(data.rows)
 					
 				}
 			}

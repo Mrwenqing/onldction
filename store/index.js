@@ -32,11 +32,8 @@ const store = new Vuex.Store({
 			state.isToken=uni.getStorageSync(TOKEN)|| ""
 		},
 		
-		
-		
 		// 存储 用户信息 以及 token
 		setToken(state, data) {
-			// console.log(data)
 			// 存储用户信息
 			state.userInfo = data
 			uni.setStorageSync(USER_INFO, data)
@@ -55,19 +52,17 @@ const store = new Vuex.Store({
 			
 			state.userInfo = res
 			uni.setStorageSync(USER_INFO, res)
-			// state.userinfo.phone=phone
-			// uni.setStorageSync(USER_INFO, state.userinfo)
 		},
 		
 		// 添加搜索历史记录 
 		addHistory(state,item){
-			console.log(state.historyKeyword,'5',state.historyKeyword.length)
+			
 			if(state.historyKeyword.length){
 				let index =state.historyKeyword.findIndex(e=>e==item)
-				console.log(index)
-				if(index<0){
-					state.historyKeyword.unshift(item)
+				if(index>-1){				
+					state.historyKeyword.splice(index,1)
 				}
+				state.historyKeyword.unshift(item)
 			}else{
 				state.historyKeyword=[item]
 			}

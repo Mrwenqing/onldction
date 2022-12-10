@@ -1,7 +1,7 @@
 <template>
 	<!-- 我的页面 头部封装 -->
 	<view class="user-header p-2 flex" @click="ToLogin">
-		 <img :src="hasLogin&&String(userinfo)!='{}'&&userinfo.avatar!=''?userinfo.avatar:'/components/img/dlam.webp'" alt="">
+		 <img :src="hasLogin&&String(userinfo)!='{}'&&userinfo.avatar!=''?userinfo.avatar:'/img/hmbb.webp'" alt="">
 		<view class=" userInfo">
 			
 			<view class="font-md mb-3">

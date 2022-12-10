@@ -2,8 +2,8 @@
 	<view class="bgc">
 		<!-- 消息列表 -->
 		<view class="list p-2">
-			<view class="title">666</view>
-			<view class="time">2021-09-06 21:52:57</view>
+			<view class="title">好啊好啊</view>
+			<view class="time">2021-08-06 19:51:57</view>
 		</view>
 		<noList></noList>
 	</view>
